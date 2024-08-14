@@ -40,12 +40,39 @@ void selectionsort(int A[],int n){
         }
     }
 }
+//Sorting using Quick Sort
+int partion(int A[],int l,int h){
+    int pivot=A[l];
+    int i=l,j=h;
+    do{
+        do{i++;}while(A[i]<=pivot);
+        do{j--;}while(A[i]>pivot);
+        if(i<j){
+            swap(A[l],A[j]);
+        }
+
+    }while(i<j);
+    swap(A[l],A[j]);
+    return j;
+}
+void Quicksort(int A[],int l,int h){
+    int j;
+    if(l<h){
+        j=partion(A,l,h);
+        Quicksort(A,l,j);
+        Quicksort(A,j+1,h);
+
+    }
+}
 int main(){
-    int A[]={2,4,9,8,5,7,6};
+    int A[]={2,4,9,8,5,7,6,INT32_MAX};
     int n=sizeof(A)/sizeof(A[0]);
     // Bubblesorting(A,n);
     // insertionsort(A,n);
-    selectionsort(A,n);
+    // selectionsort(A,n);
+    Quicksort(A,2,7);
+    
+    
     for(int i=0;i<n;i++){
         cout<<A[i]<<" ";
 

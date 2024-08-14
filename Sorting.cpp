@@ -46,9 +46,9 @@ int partion(int A[],int l,int h){
     int i=l,j=h;
     do{
         do{i++;}while(A[i]<=pivot);
-        do{j--;}while(A[i]>pivot);
+        do{j--;}while(A[j]>pivot);
         if(i<j){
-            swap(A[l],A[j]);
+            swap(A[i],A[j]);
         }
 
     }while(i<j);

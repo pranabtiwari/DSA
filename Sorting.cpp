@@ -28,11 +28,24 @@ void insertionsort(int A[],int n){
         A[j+1]=x;
     }
 }
+//Sorting using Selection Sort
+void selectionsort(int A[],int n){
+    int i,k,j;
+    for(i=0;i<n-1;i++){
+        for(j=k=i;j<n;j++){
+            if(A[j]<A[k]){
+                k=j;
+            }
+            swap(&A[i],&A[k]);
+        }
+    }
+}
 int main(){
     int A[]={2,4,9,8,5,7,6};
     int n=sizeof(A)/sizeof(A[0]);
     // Bubblesorting(A,n);
-    insertionsort(A,n);
+    // insertionsort(A,n);
+    selectionsort(A,n);
     for(int i=0;i<n;i++){
         cout<<A[i]<<" ";
 

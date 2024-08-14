@@ -14,6 +14,7 @@ void Bubblesorting(int A[],int n){
         }
     }
 }
+//sorting using insertionsort
 void insertionsort(int A[],int n){
     int x;
     for(int i=1;i<n;i++){

@@ -45,14 +45,14 @@ int partion(int A[],int l,int h){
     int pivot=A[l];
     int i=l,j=h;
     do{
-        do{i++;}while(A[i]<=pivot);
+        do{i++;}while(i<=h&&A[i]<=pivot);
         do{j--;}while(A[j]>pivot);
         if(i<j){
-            swap(A[i],A[j]);
+            swap(&A[i],&A[j]);
         }
 
     }while(i<j);
-    swap(A[l],A[j]);
+    swap(&A[l],&A[j]);
     return j;
 }
 void Quicksort(int A[],int l,int h){
@@ -65,12 +65,12 @@ void Quicksort(int A[],int l,int h){
     }
 }
 int main(){
-    int A[]={2,4,9,8,5,7,6,INT32_MAX};
+    int A[] = {50, 70, 60, 90, 40, 80, 10, 20, 30};
     int n=sizeof(A)/sizeof(A[0]);
     // Bubblesorting(A,n);
     // insertionsort(A,n);
     // selectionsort(A,n);
-    Quicksort(A,2,7);
+    Quicksort(A,0,n);
     
     
     for(int i=0;i<n;i++){
